@@ -9,7 +9,47 @@
     <title>@yield('title')</title>
 </head>
 <body class="@yield('body')">
+    
+    <section class="relative">
+        <div class="grid grid-cols-5 w-screen bg-white pt-2 pb-2  fixed bottom-0 left-0 pl-1 z-10">
+            <a href="acceuil">
+                <div class="text-center ml-4 mr-5 ">
+                    <i class="bi bi-house-door"></i>
+                    <p class="text-xs">Accueil</p>
+                </div>
+            </a>
 
+            <a href="MesBarrages">
+                <div class="text-center ml-4 mr-5 ">
+                    <i class="fa-solid fa-list"></i>
+                    <p class="text-xs">Entreprise</p>
+                </div>
+            </a>
+
+            <a href="video">
+                <div class="text-center ml-4 mr-5 ">
+                    <i class="fa-regular fa-circle-play"></i>
+                    <p class="text-xs">Vidéos</p>
+                </div>
+            </a>
+
+            <a href="barrage">
+                <div class="text-center ml-4 mr-5 ">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <p class="text-xs">Actif</p>
+                </div>
+            </a>
+
+            <a href="compte">
+                <div class="text-center ml-4 mr-5 ">
+                    <i class="fa-regular fa-user"></i>
+                    <p class="text-xs">Mon</p>
+                </div>
+            </a>
+
+        </div>
+
+    </section>
 @yield('content')
 
     <script src="https://kit.fontawesome.com/ca056c53d6.js" crossorigin="anonymous"></script>

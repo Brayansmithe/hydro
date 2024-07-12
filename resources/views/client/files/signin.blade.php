@@ -1,4 +1,4 @@
-@extends('client.master')
+@extends('client.master1')
 
 @section('title')
     SignIn
