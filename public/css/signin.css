@@ -1,0 +1,71 @@
+.inp{    
+    border-radius: 0px;
+    border: 0px;
+    border-bottom: 2px solid black;
+}
+
+.bi-person-circle{
+    font-size: 30px;
+}
+
+.custom{
+    border-radius: 15px;
+    color: black;
+    background-color: whitesmoke;
+}
+
+img{
+    width: 80px;
+    height: 80px;
+}
+
+.bi-arrow-left-circle{
+    font-size: 30px;
+}
+
+.bi-currency-dollar{
+    font-size: 25px;
+}
+
+.bi-people{
+    font-size: 30px;
+}
+
+.texte{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.letter{
+    color: #2D1C14;
+    -webkit-text-stroke: 1px white;
+}
+
+.contenu{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.const{
+    margin-top: 100px;
+}
+
+.bar{
+    width: 150px;
+    height: 135px;
+}
+
+.Acha{
+    width: 200px;
+}
+
+video{
+    width: 350px;
+    height: 250px;
+}
+
+
+.back{
+    background-color: rgb(190, 190, 190);
+}
