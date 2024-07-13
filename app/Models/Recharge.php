@@ -8,5 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Recharge extends Model
 {
     use HasFactory;
-    protected $fillable = ['montant', 'numero_payeur', 'transaction_id', 'status_recharhe', 'id_user','opereteur'];
+    protected $fillable = ['montant', 'numero_payeur', 'transaction_id', 
+    'status_recharhe', 'id_user','opereteur',
+    'image_recharge','address_si_usdt',];
 }

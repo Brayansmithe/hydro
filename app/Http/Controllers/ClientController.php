@@ -210,7 +210,7 @@ class clientController extends Controller
         $recharge->numero_payeur = $request->input('numero_payeur');
         $recharge->transaction_id = $request->input('transaction_id');
         $recharge->id_user=Auth::User()->id;
-        $recharge->operateur="orange Money";
+        $recharge->operateur="ORANGE";
        
         $recharge->save();
 
@@ -230,13 +230,41 @@ class clientController extends Controller
         $recharge->numero_payeur = $request->input('numero_payeur');
         $recharge->transaction_id = $request->input('transaction_id');
         $recharge->id_user=Auth::User()->id;
-        $recharge->operateur="MTN Money";
+        $recharge->operateur="MTN";
        
         $recharge->save();
 
         return redirect()->back()->with('success', 'Recharge confirmée avec succès.');
     }
 
+    public function confirmUSDT(Request $request)
+    {
+        $validatedData = $request->validate([
+            'montant' => 'required|numeric',
+            //'addresse' => 'required|string',
+            'transaction_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+        ]);
+
+        $fileNameEtExtension=$request->file('transaction_image')->getClientOriginalName();
+        $fileName=pathinfo($fileNameEtExtension, PATHINFO_FILENAME);//recupere le non del imege
+        $extension=$request->file('transaction_image')->getClientOriginalExtension();//recuperre l extention de l image
+        $fileNameToStore=$fileName."_".time().".".$extension ;//time() cest pour donner un nom unique a l image
+
+        $path=$request->file('transaction_image')->storeAs("public/transaction_image", $fileNameToStore);
+
+        $recharge = new Recharge();
+        $recharge->address_si_usdt = "Trc20-UGVDSUTFTTUZUSCUUCU";
+
+        $recharge->montant = $request->input('montant');
+        $recharge->image_recharge = $fileNameToStore;
+        $recharge->id_user=Auth::User()->id;
+        $recharge->operateur="USDT";
+        
+
+        $recharge->save();
+
+        return redirect()->back()->with('success', 'Recharge USDT confirmée avec succès.');
+    }
 
     
 

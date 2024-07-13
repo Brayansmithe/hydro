@@ -79,7 +79,7 @@ Route::post('/singnin/conecter', [ClientController::class, 'connexion']);
 Route::post('/recharger/choix', [ClientController::class, 'choixRecharge']);
 Route::post('/recharger/choix/confirmOR', [ClientController::class, 'confirmOR']);
 Route::post('/recharger/choix/confirmMTN', [ClientController::class, 'confirmMTN']);
-Route::post('/recharger/choix/confirmUSDT', [ClientController::class, 'confirmUSDT']);
+Route::post('/recharger/choix/confirmUSDT', [ClientController::class, 'confirmUSDT'])->name('confirmUSDT');
 
 
 

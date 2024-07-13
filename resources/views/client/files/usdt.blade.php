@@ -43,33 +43,56 @@
         <p>[SOUMETTRE]</p>
     </div>
 
+    @if (Session::has('success'))
+                      
+        <div class="alert alert-success">
+            {{Session::get('success')}}
+        </div>
+    @endif
+
+    @if (count($errors) >0)
+        <ul>
+            @foreach ($errors->all() as $error)
+                <div class="alert alert-danger">
+                
+                    <li>
+                        {{$error}}
+                    </li>
+                
+                </div>
+            @endforeach
+        </ul>
+    @endif
+
+
     <div class="container">
-        <form action="#" method="post" class="form-group">
+        <form action="{{url('/recharger/choix/confirmUSDT') }}" method="post" class="form-group" enctype="multipart/form-data">
+            @csrf
             <div class="mb-4">
                 <div class="form-floating mb-3">
-                    <input type="number" class="form-control inp" id="floatingInput" placeholder="Numero de telephone">
+                    <input type="number" class="form-control inp" name="montant" id="floatingInput" placeholder="Entrer votre montant" required>
                     <label for="floatingInput">Entrer votre montant</label>
                 </div>
             </div>
             <div class="mb-4">
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control inp" id="floatingInput" placeholder="Mot de passe">
-                    <label for="floatingInput">Adresse</label>
+                    <input type="text" class="form-control inp" name="addresse" disabled value="Trc20-öoubvwibulihsdavhzvsdzuv" id="floatingEmail" placeholder="Adresse électronique" required>
+                    <label for="floatingEmail">Adresse électronique</label>
                 </div>
             </div>
             <div class="mb-4">
                 <div class="form-floating mb-3">
-                    <input type="file" class="form-control inp" id="floatingInput" placeholder="Mot de passe">
-                    <label for="floatingInput">Image de transaction</label>
+                    <input type="file" class="form-control inp" name="transaction_image" id="floatingFile" placeholder="Image de transaction" required>
+                    <label for="floatingFile">Image de transaction</label>
                 </div>
             </div>
             <div class="text-center mb-3">
                 <div class="d-grid gap-1">
-                    <input type="button" value="Soumettre" class="btn btn-primary rounded-4 fw-bold">                  </div>                    
-                  <div class="form-text text-end" id="basic-addon4">Mot de passe oublie ?</div>
+                    <input type="submit" value="Soumettre" class="btn btn-primary rounded-4 fw-bold">
+                </div>                    
             </div>
-
         </form>
+        
     </div>
 
 </div>

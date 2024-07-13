@@ -14,11 +14,13 @@ return new class extends Migration
         Schema::create('recharges', function (Blueprint $table) {
             $table->id();
             $table->integer('montant');
-            $table->integer('numero_payeur');
-            $table->integer('transaction_id');
+            $table->integer('numero_payeur')->nullable();
+            $table->integer('transaction_id')->nullable();
             $table->integer('status_recharge')->default(1);
             $table->string('operateur');
+            $table->string('address_si_usdt')->nullable();
 
+            $table->string('image_recharge')->nullable();
             $table->integer('id_user');
 
 
