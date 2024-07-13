@@ -23,11 +23,11 @@ Route::get('/choix', function ()  {
     return view('/client/choix');
 });*/
 
-route::get("/choix", [ClientController::class, "choix"]);
+//route::get("/choix", [ClientController::class, "end"]);
 
 route::get("/registration", [ClientController::class, "register"]);
 
-route::get("/", [ClientController::class, "end"]);
+route::get("/", [ClientController::class, "choix"]);
 
 route::get("/compte", [ClientController::class, "compte"]);
 
@@ -76,5 +76,12 @@ Route::get('/video', [ClientController::class, 'video']);
 
 Route::post('/register/createUser', [ClientController::class, 'createUser']);
 Route::post('/singnin/conecter', [ClientController::class, 'connexion']);
+Route::post('/recharger/choix', [ClientController::class, 'choixRecharge']);
+Route::post('/recharger/choix/confirmOR', [ClientController::class, 'confirmOR']);
+Route::post('/recharger/choix/confirmMTN', [ClientController::class, 'confirmMTN']);
+Route::post('/recharger/choix/confirmUSDT', [ClientController::class, 'confirmUSDT']);
+
+
+
 
 

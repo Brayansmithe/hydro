@@ -50,15 +50,19 @@
         <h2><u>INFORMATIONS</u></h2>
     </div>
 
+    <form action="{{ url('/recharger/choix') }}" method="post">
+        @csrf
         <div class="contenu text-center">
-            <input type="radio" name="choix" id="" class="mb-4">Orange Money <br>
-            <input type="radio" name="choix" id="" class="mb-4">Mtn Money <br>
-            <input type="radio" name="choix" id="" class="mb-4">USDT Trc20
+            <input type="radio" name="choix" value="1" class="mb-4">Orange Money <br>
+            <input type="radio" name="choix" value="2" class="mb-4">Mtn Money <br>
+            <input type="radio" name="choix" value="3" class="mb-4">USDT Trc20
         </div>  
-
         <div class="mt-3 text-center">
-            <a href="#" class="btn btn-light rounded-4">Cliquez pour recharger</a>
-        </div>        
+            <input type="submit" value="Cliquez pour recharger" class="btn btn-light rounded-4">
+        </div> 
+    </form>
+    
+              
  
 
 

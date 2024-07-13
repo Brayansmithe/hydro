@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use App\Models\Recharge;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Http\Requests\LoginRequest;
@@ -176,6 +177,64 @@ class clientController extends Controller
         }
     
         return to_route('connexion')->with('erreur','numero ou mots de passe invalide');
+    }
+
+
+
+    public function choixRecharge(Request $request){
+        $choix = $request->input('choix');
+        if ($choix==1) {
+            return redirect("/rechargeOr")->with('choix',$choix);
+        } else if($choix==2){
+            return redirect("/rechargeMtn")->with('choix',$choix);
+
+        }else{
+            return redirect("/usdt")->with('choix',$choix);
+
+        }
+    
+        //return to_route("welcome")->with('valeur',$valeur);
+    }
+
+
+
+    public function confirmOr(Request $request){
+        $validatedData = $request->validate([
+            'montant' => 'required|numeric',
+            'numero_payeur' => 'required|numeric',
+            'transaction_id' => 'required|string',
+        ]);
+
+        $recharge = new Recharge();
+        $recharge->montant = $request->input('montant');
+        $recharge->numero_payeur = $request->input('numero_payeur');
+        $recharge->transaction_id = $request->input('transaction_id');
+        $recharge->id_user=Auth::User()->id;
+        $recharge->operateur="orange Money";
+       
+        $recharge->save();
+
+        return redirect()->back()->with('success', 'Recharge confirmée avec succès.');
+    }
+
+
+    public function confirmMTN(Request $request){
+        $validatedData = $request->validate([
+            'montant' => 'required|numeric',
+            'numero_payeur' => 'required|numeric',
+            'transaction_id' => 'required|string',
+        ]);
+
+        $recharge = new Recharge();
+        $recharge->montant = $request->input('montant');
+        $recharge->numero_payeur = $request->input('numero_payeur');
+        $recharge->transaction_id = $request->input('transaction_id');
+        $recharge->id_user=Auth::User()->id;
+        $recharge->operateur="MTN Money";
+       
+        $recharge->save();
+
+        return redirect()->back()->with('success', 'Recharge confirmée avec succès.');
     }
 
 
