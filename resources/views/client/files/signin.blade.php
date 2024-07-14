@@ -48,7 +48,10 @@
                                 <div class="d-grid gap-1">
                                     <button type="submit" class="btn btn-dark rounded-4">Connexion</button>
                                 </div>
-                                <div class="form-text text-end" id="basic-addon4">Mot de passe oublié ?</div>
+                                <a href="{{url('/registration')}}">
+                                    <div class="form-text text-end" id="basic-addon4">cree un compte</div>
+
+                                </a>
                             </div>
                         </form>
                         

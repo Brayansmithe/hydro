@@ -53,7 +53,7 @@
             </div>
             <div class="col text-end">
                 <span class="custom p-3">
-                    Retirer
+                    <a href="{{url('/retrait')}}">Retirer</a>
                 </span>
             </div>
         </div>

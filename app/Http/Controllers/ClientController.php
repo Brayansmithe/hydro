@@ -69,6 +69,7 @@ class clientController extends Controller
     }
 
     public function retrait(){
+
         return view('client.files.retrait');
     }
 
@@ -89,10 +90,12 @@ class clientController extends Controller
     }
 
     public function moyen_ajouter(){
+
         return view('client.files.moyen_ajouter');
     }
 
     public function retrait_ajouter(){
+
         return view('client.files.retrait_ajouter');
     }
 
@@ -176,7 +179,7 @@ class clientController extends Controller
 
         }
     
-        return to_route('connexion')->with('erreur','numero ou mots de passe invalide');
+        return to_route('login')->with('erreur','numero ou mots de passe invalide');
     }
 
 

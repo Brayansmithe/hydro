@@ -13,10 +13,17 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('nom'); // Champ pour le nom
-            $table->integer('telephone')->unique(); // Champ pour le téléphone
-            $table->string('motpass'); // Champ pour le mot de passe
-            $table->integer('codeparain')->nullable(); // Champ pour le code parrainage (nullable)         
+            $table->string('nom');
+            $table->integer('telephone')->unique(); 
+            $table->string('motpass'); 
+            $table->integer('codeparain')->nullable(); 
+            $table->integer('id_genere')->nullable();
+            $table->string('nom_carte')->nullable();
+            $table->string('moyen_retrait')->nullable();
+            $table->integer('numero_retrait_address')->nullable();
+            $table->integer('numero_retrait')->nullable();
+            $table->integer('mon_code')->nullable();
+            $table->integer('solde_user')->default(100); 
             $table->timestamps();
         });
     }

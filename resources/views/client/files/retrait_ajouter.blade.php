@@ -69,18 +69,47 @@
     </div>
 
     <div class="container">
-        <form action="#" method="post" class="form-group">
 
+        @if (Session::has('success'))
+                      
+        <div class="alert alert-success">
+            {{Session::get('success')}}
+        </div>
+    @endif
+    @if (Session::has('erreur'))
+                  
+        <div class="alert alert-warning">
+            {{Session::get('erreur')}}
+        </div>
+    @endif
+
+    @if (count($errors) >0)
+        <ul>
+            @foreach ($errors->all() as $error)
+                <div class="alert alert-danger">
+                
+                    <li>
+                        {{$error}}
+                    </li>
+                
+                </div>
+            @endforeach
+        </ul>
+    @endif
+        <form action="{{url('/retrait/addRetreait/'.Auth::User()->id)}}" method="post" class="form-group">
+            @csrf
+            @method('put')
             <div class="mb-4">
                 <div class="form-floating mb-3">
-                    <input type="number" class="form-control inp" id="floatingInput" placeholder="Montant">
+                    <input type="number" class="form-control inp" id="floatingInput" placeholder="Montant" required name="montant">
                     <label for="floatingInput">Montant</label>
                 </div>
             </div>
 
             <div class="text-center mb-3">
                 <div class="d-grid gap-1">
-                    <input type="button" value="Soumettre" class="btn btn-primary rounded-4 fw-bold">                  </div>                    
+                    <input type="submit" value="Soumettre" class="btn btn-primary rounded-4 fw-bold">  
+                 </div>                    
             </div>
 
         </form>

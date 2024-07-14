@@ -40,7 +40,7 @@
     </div>
  
     <div class="contenu text-center">
-       <h3>Minimum de retrait: ....$</h3>
+       <h3>Minimum de retrait:3250 FCFA</h3>
     </div>  
 
     <div class="container text-center fw-bold mt-3 mb-2">
@@ -67,7 +67,7 @@
             (Apres la liaison tous des informations,
             Tout s’affichera ici) <br>
             
-            CLiquez <a href="#">ici</a> por voir vos informations 
+            CLiquez <a class="btn btn-success" href="{{url('moyen_ajouter/'.Auth::User()->id)}}">ici</a> pour voir vos informations 
             bancaires <br><br>
 
             NB: Vous ne pourrez lier qu’une seule
@@ -76,14 +76,17 @@
     </div>
 
     <div class="container">
-        <p>Nom de compte [..............................................]</p>
-        <p>Numero de compte [...........................................]</p>
-        <p>Adresse [....................................................]</p>
-        <p>Banque [.....................................................]</p>
+        <p>Nom de compte [....{{Auth::User()->nom}}....]</p>
+        <p>Numero de compte [....{{Auth::User()->telephone}}....]</p>
+        <p>Adresse / Numero Retrait [....{{ Auth::user()->numero_retrait ? Auth::user()->numero_retrait : Auth::user()->numero_retrait_address }}....]</p>
+        <p>nom de retrait [....{{ Auth::user()->nom_carte ? Auth::user()->nom_carte : 'Veuillez lier une carte' }}....]</p>
+
+
+        <p>Banque [{{ Auth::user()->moyen_retrait ? Auth::user()->moyen_retrait : 'veillez ajouter une banque' }}]</p>
     </div>
 
     <div class="mt-3 text-center mb-4">
-        <a href="#" class="btn btn-primary rounded-4">Cliquez pour retirer</a>
+        <a href="{{url('/retrait_ajouter')}}" class="btn btn-primary rounded-4">Cliquez pour retirer</a>
     </div>
 
 </div>
