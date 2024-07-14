@@ -71,7 +71,7 @@
             bancaires <br><br>
 
             NB: Vous ne pourrez lier qu’une seule
-            carte bancaire <br><br>
+            carte bancaire  <a class="btn btn-success" href="{{url('/retraitMtn_Or')}}">ici</a> <br><br>
         </p>
     </div>
 
