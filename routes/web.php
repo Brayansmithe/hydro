@@ -21,7 +21,7 @@ route::get("/registration", [ClientController::class, "register"]);
 
 route::get("/", [ClientController::class, "choix"]);
 
-route::get("/compte", [ClientController::class, "compte"]);
+route::get("/compte", [ClientController::class, "compte"])->middleware('auth');
 
 
 // Route Kevin
@@ -74,6 +74,7 @@ Route::post('/recharger/choix/confirmMTN', [ClientController::class, 'confirmMTN
 Route::post('/recharger/choix/confirmUSDT', [ClientController::class, 'confirmUSDT'])->name('confirmUSDT');
 Route::post('/retrait/moyen/{id}', [RetraitController::class, 'storeMoyenRetrait']);
 Route::put('/retrait/addRetreait/{id}', [RetraitController::class, 'RetraitStore']);
+Route::get('/deconnexion',[RetraitController::class,'deconnexion']);
 
 
 

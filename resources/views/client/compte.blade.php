@@ -28,15 +28,15 @@
                 <div class="flex justify-between items-center bg-stone-600  border-b-2 border-black">
 
                     <div class="p-3 text-center">
-                        <p>Gustave</p> 
+                        <p>{{Auth::user()->nom}}</p> 
                     </div>
 
                     <div class="p-3 text-center">
-                        <p>693494147</p> 
+                        <p>{{Auth::user()->telephone}}</p> 
                     </div>
 
                     <div class="p-3 text-center">
-                        <p><span>ID: </span>12345678</p> 
+                        <p><span>ID: </span>{{Auth::user()->id_genere}}</p> 
                     </div>
 
                 </div>
@@ -44,7 +44,7 @@
                 <div class="flex justify-around items-center bg-stone-600 border-b-2 border-black">
 
                     <div class="py-2 text-center">
-                        <p>10000 <span>($)</span></p> 
+                        <p>{{Auth::user()->solde_user}} <span>(FCFA)</span></p> 
                         <p>Solde</p>
                     </div>
 
@@ -57,19 +57,19 @@
 
                 <div class="flex justify-around items-center bg-stone-600 border-b-2 border-black">
 
-                    <a href="">
+                    <a href="{{url('/retrait')}}">
                         <div class="p-3 text-center">
                             <p class="uppercase text-sm">inviter</p> 
                         </div>
                     </a>
 
-                    <a href="">
+                    <a href="{{url('/recharger')}}">
                         <div class="p-3 text-center">
                             <p class="uppercase text-sm">recharger</p> 
                         </div>
                     </a>
 
-                    <a href="">
+                    <a href="{{url('/retrait')}}">
                         <div class="p-3 text-center">
                             <p class="uppercase text-sm">retirer</p> 
                         </div>
@@ -83,7 +83,7 @@
 
             <div class="mt-10 text-white">
 
-                <a href="">
+                <a href="{{url('/MesRecharges')}}">
                     <div class=" bg-stone-600 border-b-2 border-black">
 
                         <div class="flex justify-between items-center p-1 text-center">
@@ -98,7 +98,7 @@
                     </div>
                 </a>
 
-                <a href="">
+                <a href="{{url('/MesRetraits')}}">
                     <div class=" bg-stone-600 border-b-2 border-black">
 
                         <div class="flex justify-between items-center p-1 text-center">
@@ -127,8 +127,8 @@
                         
                     </div>
                 </a>
-
-                <a href="">
+             
+                <a href="{{url('/deconnexion')}}">
                     <div class=" bg-stone-600 border-b-2 border-black">
 
                         <div class="flex justify-between items-center p-1 text-center">

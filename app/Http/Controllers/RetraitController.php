@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Retrait;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class RetraitController extends Controller
 {
@@ -80,6 +82,12 @@ class RetraitController extends Controller
     
             return redirect()->back()->with('success', 'Votre retrait a été effectué avec succès et est en cours de traitement');
         }
+    }
+
+
+    public function deconnexion(){
+        Auth::logout();
+        return redirect('/');
     }
     
 
