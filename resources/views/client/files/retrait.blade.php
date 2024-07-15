@@ -53,8 +53,8 @@
         </p>
     </div>
 
-    <div class="container text-center fw-bold mt-3 mb-2">
-        <h2 class="text-red"><u class="text-danger">Attention!!!</u></h2>
+    <div class="container text-center font-bold mt-3 mb-2 underline">
+        <h2 class="text-red-500 text-xl">Attention!!!</h2>
     </div>
 
     <div class="text-center">
