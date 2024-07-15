@@ -4,39 +4,29 @@
     RechageMtn
 @endsection
 
-@section('content')
+@section('body')
+    bg-black
+@endsection
 
-<style>
-    body{
-        background-color: black;
-    }
-</style>
+@section('content')
 
 <div class="container">
 
-    <div class="row mt-3 mb-5 text-light">
-        <div class="col text-start">
-            <i class="bi bi-arrow-left-circle"></i>
-        </div>
-        <div class="mt-2 col-6 text-center">
-            <h3 class="texte">
-                <span class="letter">R</span>
-                <span class="letter">E</span>
-                <span class="letter">C</span>
-                <span class="letter">H</span>
-                <span class="letter">A</span>
-                <span class="letter">R</span>
-                <span class="letter">G</span>
-                <span class="letter">E</span>
-                <span class="letter">R</span>
-            </h3>
-        </div>
-        <div class="col text-end">
-            <i class="bi bi-currency-dollar"></i>        
-        </div>
-    </div>
+@extends('client.head')
 
-    <div class="container text-center text-light">
+@section('menulink')
+    recharger
+@endsection
+
+@section('menuname')
+    RECHARGE
+@endsection
+
+@section('menuicone')
+    bi bi-currency-dollar
+@endsection
+
+    <div class="container text-center text-light mb-5 mt-32">
         <p>Nom de compte: <span class="fw-bold">HYDRORENT</span></p>
         <p>*126*(...)*numero marchant*numero de compte*montant#</p>
         <p>Copier l’ID de la transaction et venir coller</p>
@@ -88,7 +78,7 @@
             </div>
             <div class="text-center mb-3">
                 <div class="d-grid gap-1">
-                    <input type="submit" value="Soumettre" class="btn btn-primary rounded-4 fw-bold">
+                    <input type="submit" value="Soumettre" class="btn bg-black border-white text-white  rounded-4 fw-bold">
                 </div>                    
             </div>
         </form>

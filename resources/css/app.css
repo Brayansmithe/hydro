@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.text-stroke {
+    -webkit-text-stroke: 1px white; /* Bordure de 1px autour du texte */
+    color: transparent; /* Texte transparent */
+}
+
+.text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.bg-overlay1 {
+    background-color: rgba(0, 0, 0, 0.5); /* Couleur noire avec 50% d'opacité */
+}

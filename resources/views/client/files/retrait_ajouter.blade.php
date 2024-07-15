@@ -3,71 +3,94 @@
 @section('title')
     Retraits
 @endsection
+@section('body')
+    bg-black
+@endsection
 
 @section('content')
 
-<style>
-    body{
-        background-color: black;
-    }
-</style>
 
-<div class="container">
+<div class="">
 
-    <div class="row mt-3 mb-4 text-light">
-        <div class="col text-start">
-            <i class="bi bi-arrow-left-circle"></i>
+@extends('client.head')
+
+@section('menulink')
+    retrait
+@endsection
+
+@section('menuname')
+    retraits
+@endsection
+
+@section('menuicone')
+    bi bi-currency-dollar
+@endsection
+
+    
+
+    <div class="mt-10 text-white">
+
+        <div class="flex justify-between items-center bg-stone-600  border-b-2 border-black">
+
+            <div class="p-3 text-center">
+                <p>{{Auth::user()->nom}}</p> 
+            </div>
+
+            <div class="p-3 text-center">
+                <p>{{Auth::user()->telephone}}</p> 
+            </div>
+
+            <div class="p-3 text-center">
+                <p><span>ID: </span>{{Auth::user()->id_genere}}</p> 
+            </div>
+
         </div>
-        <div class="mt-2 col-8 text-center">
-            <h3 class="texte">
-                <span class="letter">R</span>
-                <span class="letter">E</span>
-                <span class="letter">T</span>
-                <span class="letter">R</span>
-                <span class="letter">A</span>
-                <span class="letter">I</span>
-                <span class="letter">T</span>
-            </h3>
+
+        <div class="flex justify-around items-center bg-stone-600 border-b-2 border-black">
+
+            <div class="py-2 text-center">
+                <p>{{Auth::user()->solde_user}} <span>(FCFA)</span></p> 
+                <p>Solde</p>
+            </div>
+
+            <div class="py-2 text-center">
+                <p>10</p>
+                <p>équipe</p>
+            </div>
+
         </div>
-        <div class="col text-end">
-            <i class="bi bi-currency-dollar"></i>        
+
+        <div class="flex justify-around items-center bg-stone-600 border-b-2 border-black">
+
+            <a href="{{url('/inviter')}}">
+                <div class="p-3 text-center">
+                    <p class="uppercase text-sm">Inviter</p> 
+                </div>
+            </a>
+
+            <a href="{{url('/recharger')}}">
+                <div class="p-3 text-center">
+                    <p class="uppercase text-sm">Recharger</p> 
+                </div>
+            </a>
+
+            <a href="{{url('/retrait')}}">
+                <div class="p-3 text-center">
+                    <p class="uppercase text-sm">Retirer</p> 
+                </div>
+            </a>
+
         </div>
+
     </div>
 
-    <div class="container-fluid text-light mt-5">
 
-        <div class="row bg-secondary pt-2 pb-2">
-            <div class="col text-start">GUSTAVE</div>
-            <div class="col text-center">673940273</div>
-            <div class="col text-end">ID: 2389494</div>
-        </div>
-        
-        <div class="row bg-secondary pt-2 pb-2">
-            <div class="col text-start">
-                10.000$ <br>
-                <span>Solde</span>
-            </div>
-            <div class="col text-end">
-                10 <br>
-                <span>Equipe</span>
-            </div>
-        </div>
-
-        <div class="row bg-secondary pt-2 pb-2">
-            <div class="col text-start">Inviter</div>
-            <div class="col text-center">Recharger</div>
-            <div class="col text-end">Retirer</div>
-        </div>
-
-        <div class="container mt-4">
-            <p class="text-center text-light">
-                 <span class="text-danger">NB :</span> Les retraits sont disponibles de 
+    <div class="container mt-4 mb-4">
+        <p class="text-center text-light font-bold text-lg">
+            <span class="text-danger font-bold text-2xl">NB :</span> Les retraits sont disponibles de 
                  lundi à samedi de 8h à 16h
-            </p>
-        </div>
-
+        </p>
     </div>
-
     <div class="container">
 
         @if (Session::has('success'))
@@ -78,7 +101,7 @@
     @endif
     @if (Session::has('erreur'))
                   
-        <div class="alert alert-warning">
+        <div class="alert alert-danger">
             {{Session::get('erreur')}}
         </div>
     @endif
@@ -108,7 +131,7 @@
 
             <div class="text-center mb-3">
                 <div class="d-grid gap-1">
-                    <input type="submit" value="Soumettre" class="btn btn-primary rounded-4 fw-bold">  
+                    <input type="submit" value="Soumettre" class="btn btn-primary border-white bg-black rounded-full font-bold">  
                  </div>                    
             </div>
 

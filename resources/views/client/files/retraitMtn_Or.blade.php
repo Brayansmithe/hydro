@@ -3,48 +3,32 @@
 @section('title')
     Retraits
 @endsection
+@section('body')
+    bg-black
+@endsection
 
 @section('content')
 
-<style>
-    body{
-        background-color: black;
-    }
-    .hidden {
-        display: none;
-    }
-</style>
 
-<div class="container">
+<div class="">
 
-    <div class="row mt-3 mb-4 text-light">
-        <div class="col text-start">
-            <i class="bi bi-arrow-left-circle"></i>
-        </div>
-        <div class="mt-2 col-8 text-center">
-            <h3 class="texte">
-                <span class="letter">C</span>
-                <span class="letter">A</span>
-                <span class="letter">R</span>
-                <span class="letter">T</span>
-                <span class="letter">E</span>&nbsp;&nbsp;
-                <span class="letter">B</span>
-                <span class="letter">A</span>
-                <span class="letter">C</span>
-                <span class="letter">C</span>
-                <span class="letter">A</span>
-                <span class="letter">I</span>
-                <span class="letter">R</span>
-                <span class="letter">E</span>
-            </h3>
-        </div>
-        <div class="col text-end">
-            <i class="bi bi-currency-dollar"></i>        
-        </div>
-    </div>
+@extends('client.head')
 
-    <div class="container">
-        <p class="text-center text-light">
+@section('menulink')
+    retrait
+@endsection
+
+@section('menuname')
+    Carte bancaire
+@endsection
+
+@section('menuicone')
+    bi bi-currency-dollar
+@endsection
+
+
+    <div class="container mt-32 mb-3">
+        <p class="text-center text-white text-xl font-bold">
              <span class="text-danger">NB : </span> Vous ne pourrez lier qu’une seule
             carte bancaire
         </p>
@@ -109,7 +93,7 @@
             </div>
             <div class="text-center mb-3">
                 <div class="d-grid gap-1">
-                    <input type="submit" value="Soumettre" class="btn btn-dark rounded-4 fw-bold">
+                    <input type="submit" value="Soumettre" class="btn bg-black border-white text-white rounded-4 fw-bold">
                 </div>
             </div>
         </form>

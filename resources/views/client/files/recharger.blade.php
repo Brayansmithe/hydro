@@ -4,63 +4,54 @@
     Rechager
 @endsection
 
+@section('body')
+    bg-cover bg-no-repeat bg-center min-h-screen text-shadow 
+@endsection
+
 @section('content')
 
 <style>
     body{
         background-image: url('images/logo7.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        height: 100vh;
-        width: 100%;
-        /* display: flex;
-        justify-content: center;
-        align-items: center; */
-        color: white; /* Couleur du texte en blanc pour contraster avec l'image */
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
 </style>
 
-<div class="container">
+<div class="container text-white">
 
-    <div class="row mt-3 mb-5">
-        <div class="col text-start">
-            <i class="bi bi-arrow-left-circle"></i>
-        </div>
-        <div class="mt-2 col-6 text-center">
-            <h3 class="texte">
-                <span class="letter">R</span>
-                <span class="letter">E</span>
-                <span class="letter">C</span>
-                <span class="letter">H</span>
-                <span class="letter">A</span>
-                <span class="letter">R</span>
-                <span class="letter">G</span>
-                <span class="letter">E</span>
-                <span class="letter">R</span>
-            </h3>
-        </div>
-        <div class="col text-end">
-            <i class="bi bi-currency-dollar"></i>        
-        </div>
+@extends('client.head')
+
+@section('menulink')
+    compte
+@endsection
+
+@section('menuname')
+    RECHARGE
+@endsection
+
+@section('menuicone')
+    bi bi-currency-dollar
+@endsection
+
+
+    <div class="container text-center fw-bold mb-4 const mt-52 ">
+        <h2 class="underline text-3xl font-bold mb-4">INFORMATIONS</h2>
+        <p class="text-2xl mb-4">Minimum de récharge: 5$</p>
+        <h2 class="underline text-3xl font-bold mb-4">BANQUES</h2>
     </div>
 
-    <div class="container text-center fw-bold mb-4 const">
-        <h2><u>INFORMATIONS</u></h2>
-    </div>
-
-    <form action="{{ url('/recharger/choix') }}" method="post">
+    <div class="flex justify-center">
+    <form action="{{ url('/recharger/choix') }}" method="post" class="text-center">
         @csrf
-        <div class="contenu text-center">
-            <input type="radio" name="choix" value="1" class="mb-4">Orange Money <br>
-            <input type="radio" name="choix" value="2" class="mb-4">Mtn Money <br>
-            <input type="radio" name="choix" value="3" class="mb-4">USDT Trc20
+        <div class="contenu text-start">
+            <input type="radio" name="choix" value="1" class="mb-4 text-2xl text-stroke"><label class="text-3xl font-bold underline"> Orange Money </label><br>
+            <input type="radio" name="choix" value="2" class="mb-4 text-stroke "><label class="text-3xl font-bold underline">Mtn Money</label> <br>
+            <input type="radio" name="choix" value="3" class="mb-4"><label class="text-3xl font-bold underline">USDT Trc20 </label>
         </div>  
         <div class="mt-3 text-center">
-            <input type="submit" value="Cliquez pour recharger" class="btn btn-light rounded-4">
+            <input type="submit" value="Cliquez pour recharger" class="btn btn-light rounded-4 border-0 text-white bg-black">
         </div> 
     </form>
+    </div>
     
               
  

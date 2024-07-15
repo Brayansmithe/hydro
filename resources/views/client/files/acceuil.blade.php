@@ -4,73 +4,79 @@
     Acceuil
 @endsection
 
+@section('body')
+    bg-cover bg-no-repeat bg-center min-h-screen text-shadow
+@endsection
+
 @section('content')
 
     <style>
         body{
             background-image: url('images/logo5.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            height: 100vh;
-            width: 100%;
-            /* display: flex;
-            justify-content: center;
-            align-items: center; */
-            color: white; /* Couleur du texte en blanc pour contraster avec l'image */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
     </style>
 
-    <div class="container">
+    <div class="container text-white text-shadow">
 
-        <div class="container mt-4 row mb-4 d-flex justify-content-between align-items-center">
+        
+        <div class="container mt-10 row mb-10 d-flex justify-content-between align-items-center">
             <div class="col text-start">
-                {{-- <img src="images/logo.jpeg" class="" alt="###"> --}}
+                <a href="@yield('menulink')">
+                    <i class="fa-solid fa-arrow-left text-white border-white border-2 rounded-full p-1"></i>
+                </a>
             </div>
             <div class="col text-center">
-                <h6 class="fw-bold">SPE ENERGY</h6>
+                <h6 class=" text-3xl font-bold text-stroke ">SPE ENERGY</h6>
             </div>
             <div class="col text-end">
-                <i class="bi bi-person-circle text-dark"></i>
+                <i class="bi bi-person-circle text-white text-2xl text-stroke"></i>
             </div>
         </div>
 
-        <div class="text-center">
+        <div class="text-center text-3xl font-bold mb-10">
             <h1>Bienvenu</h1>
         </div>
-        <hr class="text-dark">
-        <div class="container row mt-4 mb-4">
-            <div class="col text-start">
-                <span class="custom p-3">
-                    Inviter
-                </span>
-            </div>
-            <div class="col text-center">
-                <span class="custom p-3">
-                    Recharger
-                </span>
-            </div>
-            <div class="col text-end">
-                <span class="custom p-3">
-                    <a href="{{url('/retrait')}}">Retirer</a>
-                </span>
-            </div>
+        <hr class="text-black border-2">
+        <div class="flex justify-between py-4">
+
+        <a href="{{url('/invite')}}">
+                <div class="text-start font-bold text-xl">
+                    <span class="p-3">
+                        Inviter
+                    </span>
+                </div>
+            </a>
+
+            <a href="{{url('/recharger')}}">
+                <div class="text-center font-bold text-xl">
+                    <span class="p-3">
+                        Recharger
+                    </span>
+                </div>
+            </a>
+
+            <a href="{{url('/retrait')}}">
+                <div class="text-end font-bold text-xl">
+                    <span class="p-3">
+                        Retirer
+                    </span>
+                </div>
+            </a>
         </div>
 
-        <hr class="text-dark">
+        <hr class="text-black border-2 mb-5">
 
-        <h2 class="text-center"><u>Partenaires</u></h2>
+        <h2 class="text-center underline text-2xl font-bold"><u>Partenaires</u></h2>
 
-        <div class="container row mt-5">
-            <div class="col text-start">
-                <img src="images/logo1.jpg" class="" alt="###">
+        <div class="flex justify-between mt-5">
+            <div class="flex justify-center">
+                <img src="images/logo1.jpg" class="w-5/6 h-full" alt="###">
             </div>
-            <div class="col text-center">
-                <img src="images/logo2.jpg" class="" alt="###">
+            <div class="flex justify-center">
+                <img src="images/logo2.jpg" class="w-5/6 h-full" alt="###">
             </div>
-            <div class="col text-end">
-                <img src="images/logo3.jpg" class="" alt="###">
+            <div class="flex justify-center">
+                <img src="images/logo3.jpg" class="w-5/6 h-full" alt="###">
             </div>
         </div>
     </div>  

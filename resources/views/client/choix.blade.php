@@ -13,7 +13,7 @@
 
         <div class="flex justify-center my-4 ">
             <p class="font-bold text-lg ">
-                Hydrorent est un site dédier a au barage hydro-éléctrique
+                Spy Energy est un site dédier aux barrages hydro-éléctriques
             </p>
         </div>
 

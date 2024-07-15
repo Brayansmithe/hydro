@@ -10,13 +10,21 @@
 
     @section('content')
 
-        <section class="mb-24 mt-14">
+        <section class=" mt-14">
 
-            <div class="flex justify-around items-center">
-                <i class="fa-solid fa-arrow-left text-white border-white border-2 rounded-full p-1"></i>
-                <p class="text-2xl font-bold text-white "><span class="stroke-2">COMPTE</span></p>
-                <i class="fa-solid fa-user-gear text-white"></i>
-            </div>
+        @extends('client.head')
+
+            @section('menulink')
+                acceuil
+            @endsection
+
+            @section('menuname')
+                COMPTE
+            @endsection
+
+            @section('menuicone')
+                fa-solid fa-user-gear
+            @endsection
 
             <div class="flex justify-around items-center mt-10 text-white ml-3">
                 <i class="fa-solid fa-volume-off text-xl"></i>
@@ -57,21 +65,21 @@
 
                 <div class="flex justify-around items-center bg-stone-600 border-b-2 border-black">
 
-                    <a href="{{url('/retrait')}}">
+                    <a href="{{url('/inviter')}}">
                         <div class="p-3 text-center">
-                            <p class="uppercase text-sm">inviter</p> 
+                            <p class="uppercase text-sm">Inviter</p> 
                         </div>
                     </a>
 
                     <a href="{{url('/recharger')}}">
                         <div class="p-3 text-center">
-                            <p class="uppercase text-sm">recharger</p> 
+                            <p class="uppercase text-sm">Recharger</p> 
                         </div>
                     </a>
 
                     <a href="{{url('/retrait')}}">
                         <div class="p-3 text-center">
-                            <p class="uppercase text-sm">retirer</p> 
+                            <p class="uppercase text-sm">Retirer</p> 
                         </div>
                     </a>
 
@@ -82,6 +90,21 @@
 
 
             <div class="mt-10 text-white">
+
+                <a href="{{url('/MesBarrages')}}">
+                    <div class=" bg-stone-600 border-b-2 border-black">
+
+                        <div class="flex justify-between items-center p-1 text-center">
+                            <i class="fa-solid fa-list  text-blue-500 text-2xl ml-2"></i>
+                            <div class="text-start w-11/12 ml-3">
+                                <p class="text-md font-bold">Mes Barrages </p>
+                                <p class="text-xs">Ici vous pouvez consulter l'evolution de<br>vos barrages </p>
+                            </div>
+                            <i class="fa-solid fa-chevron-right text-neutral-400 text-end mr-2"></i>                    
+                        </div>
+                        
+                    </div>
+                </a>
 
                 <a href="{{url('/MesRecharges')}}">
                     <div class=" bg-stone-600 border-b-2 border-black">
@@ -158,7 +181,7 @@
                     </div>
                 </a>
 
-                <a href="/">
+                <a href="/video">
                     <div class=" bg-stone-600 border-b-2  border-black">
 
                         <div class="flex justify-between items-center p-1 text-center">

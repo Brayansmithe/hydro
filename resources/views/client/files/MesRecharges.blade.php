@@ -12,67 +12,57 @@
     }
 </style>
 
-<div class="container">
+<div class="">
 
-    <div class="row mt-3 mb-4 text-light">
-        <div class="col text-start">
-            <i class="bi bi-arrow-left-circle"></i>
-        </div>
-        <div class="mt-2 col-8 text-center">
-            <h3 class="texte">
-                <span class="letter">M</span>
-                <span class="letter">E</span>
-                <span class="letter">S</span>&nbsp;&nbsp;
-                <span class="letter">R</span>
-                <span class="letter">E</span>
-                <span class="letter">C</span>
-                <span class="letter">H</span>
-                <span class="letter">C</span>
-                <span class="letter">A</span>
-                <span class="letter">R</span>
-                <span class="letter">G</span>
-                <span class="letter">E</span>
-                <span class="letter">S</span>
-            </h3>
-        </div>
-        <div class="col text-end">
-            <i class="bi bi-currency-dollar"></i>       
-        </div>
+@extends('client.head')
+
+@section('menulink')
+    acceuil
+@endsection
+
+@section('menuname')
+    MES RECHARGES
+@endsection
+
+@section('menuicone')
+    bi bi-currency-dollar
+@endsection
+
+    
+
+    <div class="text-center text-light mb-5 mt-32">
+        <h3 class="text-2xl underline font-black"><u>STATUS DES RECHARGES</u></h3>
     </div>
 
-    <div class="text-center text-light mb-5">
-        <h3><u>STATUS DES RECHARGES</u></h3>
-    </div>
-
-    <div class="container">
-        <table class="table">
-            <thead class="fw-bold">
-                <th>#</th>
-                <th>Moyen</th>
-                <th>Somme</th>
-                <th>Status</th>
+    <div class="mx-1">
+        <table class="text-white border  border-white ">
+            <thead class="fw-bold text-lg">
+                <th class="py-3 px-4 border-b border-e border-white">#</th>
+                <th class="py-3 px-4 border-b border-e border-white">Moyen</th>
+                <th class="py-3 px-4 border-b border-e border-white">Somme (FCFA) </th>
+                <th class="py-3 px-4 border-b border-e border-white">Status</th>
             </thead>
 
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Mtn</td>
-                    <td>10000</td>
-                    <td class="fw-bold text-warning">En cours</td>
+                <tr class="fw-bold" >
+                    <td class="py-3 px-4 border-b border-e border-white">1</td>
+                    <td class="py-3 px-4 border-b border-e border-white">Mtn</td>
+                    <td class="py-3 px-4 border-b border-e border-white">10000</td>
+                    <td class="py-3 px-4 border-b border-e border-white text-warning">En cours</td>
                 </tr>
 
-                <tr>
-                    <td>2</td>
-                    <td>Orange</td>
-                    <td>5000</td>
-                    <td class="fw-bold text-danger">Echec</td>
+                <tr class="fw-bold">
+                    <td class="py-3 px-4 border-b border-e border-white">2</td>
+                    <td class="py-3 px-4 border-b border-e border-white">Orange</td>
+                    <td class="py-3 px-4 border-b border-e border-white">5000</td>
+                    <td class="py-3 px-4 border-b border-e border-white text-danger">Echec</td>
                 </tr>
 
-                <tr>
-                    <td>3</td>
-                    <td>USDT Trc20</td>
-                    <td>15000</td>
-                    <td class="fw-bold text-success">Valider</td>
+                <tr class="fw-bold">
+                    <td class="py-3 px-4 border-b border-e border-white">3</td>
+                    <td class="py-3 px-4 border-b border-e border-white">USDT Trc20</td>
+                    <td class="py-3 px-4 border-b border-e border-white">15000</td>
+                    <td class="py-3 px-4 border-b border-e border-white text-success">Valider</td>
                 </tr>
             </tbody>
         </table>

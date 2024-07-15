@@ -1,42 +1,39 @@
 @extends('client.master')
 
 @section('title')
-    Retraits
+    Retrait
+@endsection
+
+@section('body')
+    bg-cover bg-no-repeat bg-center min-h-screen text-shadow 
 @endsection
 
 @section('content')
 
 <style>
     body{
-        background-color: black;
+        background-image: url('images/logo7.jpg');
     }
 </style>
 
-<div class="container text-light">
+<div class="container text-white mb-16">
 
-    <div class="row mt-3 mb-4">
-        <div class="col text-start">
-            <i class="bi bi-arrow-left-circle"></i>
-        </div>
-        <div class="mt-2 col-6 text-center">
-            <h3 class="texte">
-                <span class="letter">R</span>
-                <span class="letter">E</span>
-                <span class="letter">T</span>
-                <span class="letter">R</span>
-                <span class="letter">A</span>
-                <span class="letter">I</span>
-                <span class="letter">T</span>
-                <span class="letter">S</span>
-            </h3>
-        </div>
-        <div class="col text-end">
-            <i class="bi bi-currency-dollar"></i>        
-        </div>
-    </div>
+@extends('client.head')
+
+@section('menulink')
+    compte
+@endsection
+
+@section('menuname')
+    Retrait
+@endsection
+
+@section('menuicone')
+    bi bi-currency-dollar
+@endsection
 
     <div class="container text-center fw-bold mb-2">
-        <h2><u>INFORMATIONS</u></h2>
+        <h2 class="underline text-3xl font-bold mb-4">INFORMATIONS</h2>
     </div>
  
     <div class="contenu text-center">
@@ -44,7 +41,7 @@
     </div>  
 
     <div class="container text-center fw-bold mt-3 mb-2">
-        <h2><u>Methodes</u></h2>
+        <h2 class="underline text-3xl font-bold mb-4">Methodes</h2>
     </div>
 
     <div class="text-center">
@@ -86,7 +83,7 @@
     </div>
 
     <div class="mt-3 text-center mb-4">
-        <a href="{{url('/retrait_ajouter')}}" class="btn btn-primary rounded-4">Cliquez pour retirer</a>
+        <a href="{{url('/retrait_ajouter')}}" class="btn text-white bg-black rounded-full">Cliquez pour retirer</a>
     </div>
 
 </div>

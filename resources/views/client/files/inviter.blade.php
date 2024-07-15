@@ -1,13 +1,13 @@
 @extends('client.master')
 
 @section('title')
-    SignIn
+    Inviter
 @endsection
 
 @section('content')
 
 <style>
-    .back{
+    .back{ 
         background-image: url('images/logo6.jpg');
         background-size: cover;
         background-repeat: no-repeat;
@@ -22,7 +22,8 @@
     }
 </style>
 
-<div class="container">
+<div class="container mt-10">
+
 
     <div class="row mt-1 mb-5">
         <div class="col text-start">

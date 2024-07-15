@@ -3,55 +3,57 @@
 @section('title')
     Retraits
 @endsection
+@section('body')
+    bg-black
+@endsection
 
 @section('content')
 
-<style>
-    body{
-        background-color: black;
-    }
-</style>
 
-<div class="container">
+<div class="">
 
-    <div class="row mt-3 mb-4 text-light">
-        <div class="col text-start">
-            <i class="bi bi-arrow-left-circle"></i>
-        </div>
-        <div class="mt-2 col-8 text-center">
-            <h3 class="texte">
-                <span class="letter">C</span>
-                <span class="letter">A</span>
-                <span class="letter">R</span>
-                <span class="letter">T</span>
-                <span class="letter">E</span>&nbsp;&nbsp;
-                <span class="letter">B</span>
-                <span class="letter">A</span>
-                <span class="letter">C</span>
-                <span class="letter">C</span>
-                <span class="letter">A</span>
-                <span class="letter">I</span>
-                <span class="letter">R</span>
-                <span class="letter">E</span>
-            </h3>
-        </div>
-        <div class="col text-end">
-            <i class="bi bi-currency-dollar"></i>        
-        </div>
-    </div>
+@extends('client.head')
 
-    <div class="container">
-        <p class="text-center text-light">
+@section('menulink')
+    retrait
+@endsection
+
+@section('menuname')
+    Carte bancaire
+@endsection
+
+@section('menuicone')
+    bi bi-currency-dollar
+@endsection
+
+    <div class="container mb-3 mt-32">
+        <p class="text-center text-light text-xl font-bold">
              <span class="text-danger">NB :</span> Pour toutes modifications, bien 
             vouloir contacter le service client
         </p>
     </div>
 
     <div class="container back p-3 text-light fw-bold">
-        <p>Prénom : <span class="text-primary">Catherine</span> </p>
-        <p>Nom : <span class="text-primary">Dongfack stanislass</span> </p>
-        <p>Moyen de retrait : <span class="text-primary">Orange money</span> </p>
-        <p>Numero du retrait : <span class="text-primary">689256789</span> </p>
+
+        <div class="flex ">
+            <p class="text-start">Prénom :  </p> <span class="text-primary text-end">Catherine</span>
+        </div>
+
+        <div class="flex">
+        <p>Nom :  </p> <span class="text-primary">Dongfack stanislass</span>
+        </div>
+
+        <div class="flex">
+            <p>Moyen de retrait : </p> <span class="text-primary">Orange money</span> 
+        </div>
+
+        <div class="flex">
+            <p>Numero du retrait : </p> <span class="text-primary">689256789</span>
+        </div>
+        
+        
+        
+        
     </div>
 
 </div>

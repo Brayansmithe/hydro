@@ -1,99 +1,120 @@
 @extends('client.master')
 
 @section('title')
-    RechageMtn
+    Mes barrages
+@endsection
+
+@section('body')
+    bg-black
 @endsection
 
 @section('content')
 
-<style>
-    body{
-        background-color: black;
-    }
-</style>
-
 <div class="container">
 
-    <div class="row mt-3 mb-5 text-light">
-        <div class="col text-start">
-            <i class="bi bi-arrow-left-circle"></i>
-        </div>
-        <div class="mt-2 col-6 text-center">
-            <h3 class="texte">
-                <span class="letter">B</span>
-                <span class="letter">A</span>
-                <span class="letter">R</span>
-                <span class="letter">R</span>
-                <span class="letter">A</span>
-                <span class="letter">G</span>
-                <span class="letter">E</span>
-                <span class="letter">S</span>
-            </h3>
-        </div>
-        <div class="col text-end">
-            <i class="bi bi-bar-chart"></i>        
-        </div>
-    </div>
+@extends('client.head')
+
+@section('menulink')
+    compte
+@endsection
+
+@section('menuname')
+    mes BARRAGE
+@endsection
+
+@section('menuicone')
+bi bi-bar-chart
+@endsection
 
     <div class="container text-light">
 
-        <div class="row bg-secondary pt-3 pb-3 rounded-4 mb-3">
-            <div class="col text-start">
-                <h1>Barrage 1</h1>
-                <p>Pourcentage/jour: 4.5% <br>
-                Période de validitée: 365 Jours <br>
-                40$</p>
+        <div class="row bg-stone-600 pt-3 pb-4 rounded-4 mb-3 items-center">
+            <div class="col-7 text-start mb-2">
+                <h1 class="text-center font-bold text-xl">Barrage 1</h1>
+
+                <div class="flex justify-between mb-2">
+                    <p>Pourcentage/jour:  </p>
+                    <p class="text-end">4.5%</p>
+                    
+                </div>
+
+                <div class="flex justify-between mb-2 items-center">
+                    <p class="">période validitée:</p>
+                    <p class="text-end">365Jours</p>
+                    
+                </div>
+
+                <div class="flex justify-center mb-2">
+                    <p class="font-bold text-2xl">15$</p>
+                </div>
+                
+                
             </div>
-            <div class="col text-end">
+            <div class="col-5 text-end">
                 <img src="images/logo5.jpg" class="rounded-2 bar" alt="###">
             </div>
             <div class="text-center">
-                <input type="button" value="En cours" class="btn btn-dark rounded-4 Acha">
+                <input type="button" value="En cours" class="w-2/4 h-12 bg-black rounded-full text-white">
             </div>
         </div>
 
-        <div class="row bg-secondary pt-3 pb-3 rounded-4 mb-3">
-            <div class="col text-start">
-                <h1>Barrage 2</h1>
-                <p>Pourcentage/jour: 4.7% <br>
-                Période de validitée: 365 Jours <br>
-                80$</p>
+        <div class="row bg-stone-600 pt-3 pb-4 rounded-4 mb-3 items-center">
+            <div class="col-7 text-start mb-2">
+                <h1 class="text-center font-bold text-xl">Barrage 1</h1>
+
+                <div class="flex justify-between mb-2">
+                    <p>Pourcentage/jour:  </p>
+                    <p class="text-end">4.5%</p>
+                    
+                </div>
+
+                <div class="flex justify-between mb-2 items-center">
+                    <p class="">période validitée:</p>
+                    <p class="text-end">365Jours</p>
+                    
+                </div>
+
+                <div class="flex justify-center mb-2">
+                    <p class="font-bold text-2xl">15$</p>
+                </div>
+                
+                
             </div>
-            <div class="col text-end">
+            <div class="col-5 text-end">
                 <img src="images/logo5.jpg" class="rounded-2 bar" alt="###">
             </div>
             <div class="text-center">
-                <input type="button" value="En cours" class="btn btn-dark rounded-4 Acha">
+                <input type="button" value="En cours" class="w-2/4 h-12 bg-black rounded-full text-white">
             </div>
         </div>
 
-        <div class="row bg-secondary pt-3 pb-3 rounded-4 mb-3">
-            <div class="col text-start">
-                <h1>Barrage 1</h1>
-                <p>Pourcentage/jour: 4.5% <br>
-                Période de validitée: 365 Jours <br>
-                10$</p>
-            </div>
-            <div class="col text-end">
-                <img src="images/logo5.jpg" class="rounded-2 bar" alt="###">
-            </div>
-            <div class="text-center">
-                <input type="button" value="En cours" class="btn btn-dark rounded-4 Acha">
-            </div>
-        </div>
+        <div class="row bg-stone-600 pt-3 pb-4 rounded-4 mb-3 items-center">
+            <div class="col-7 text-start mb-2">
+                <h1 class="text-center font-bold text-xl">Barrage 1</h1>
 
-        <div class="row bg-secondary pt-3 pb-3 rounded-4 mb-3">
-            <div class="col text-start">
-                <h1>Barrage 1</h1>
-                <p>Pourcentage/jour: 4.5% <br>
-                Période de validitée: 365 Jours <br>
-                20$</p>
+                <div class="flex justify-between mb-2">
+                    <p>Pourcentage/jour:  </p>
+                    <p class="text-end">4.5%</p>
+                    
+                </div>
+
+                <div class="flex justify-between mb-2 items-center">
+                    <p class="">période validitée:</p>
+                    <p class="text-end">365Jours</p>
+                    
+                </div>
+
+                <div class="flex justify-center mb-2">
+                    <p class="font-bold text-2xl">15$</p>
+                </div>
+                
+                
             </div>
-            <div class="col text-end">
+            <div class="col-5 text-end">
                 <img src="images/logo5.jpg" class="rounded-2 bar" alt="###">
             </div>
             <div class="text-center">
-                <input type="button" value="En cours" class="btn btn-dark rounded-4 Acha">
+                <input type="button" value="En cours" class="w-2/4 h-12 bg-black rounded-full text-white">
             </div>
         </div>
     </div>
