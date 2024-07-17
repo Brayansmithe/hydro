@@ -23,6 +23,13 @@
                  {{Session::get('erreur')}}
                 </div>
             @endif
+            @if (Session::has('status'))
+                
+                <div class="alert alert-success">
+                 {{Session::get('status')}}
+                </div>
+            @endif
+
 
             <div class="container">
                 <div class="row justify-content-center">
@@ -48,7 +55,7 @@
                                 <div class="d-grid gap-1">
                                     <button type="submit" class="btn btn-dark rounded-4">Connexion</button>
                                 </div>
-                                <a href="{{url('/registration')}}">
+                                <a href="{{url('/registration/invitation/3250')}}">
                                     <div class="form-text text-end" id="basic-addon4">cree un compte</div>
 
                                 </a>

@@ -49,10 +49,26 @@
             nous ! Ensemble, nous pouvons accomplir
             de grandes choses. Invitez-les des maintenat
             a nous rejoindre en partageant ce lien:
-            <a href="#">[Lien d’invitation]</a> Nous sommes impatients
+            <span id="referral-link" class="text-warning">http://hydrorenz.local/registration/invitation/{{Auth::user()->id_genere}}</span>
+            <button class="btn btn-success" onclick="copyToClipboard()">Copier le lien</button>
+            Nous sommes impatients
             de les accueillir dans notre equipe !
         </p>
     </div>
+    
+    <script>
+        function copyToClipboard() {
+            var copyText = document.getElementById("referral-link").innerText;
+            var textarea = document.createElement("textarea");
+            textarea.value = copyText;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand("copy");
+            document.body.removeChild(textarea);
+            alert("Lien copié: " + copyText);
+        }
+    </script>
+    
 </div>
 
 

@@ -16,8 +16,10 @@ use App\Http\Controllers\RetraitController;
 */
 
 
+route::get("/registration/invitation/{parain}", [ClientController::class, "register"]);
 
-route::get("/registration", [ClientController::class, "register"]);
+
+//route::get("/registration", [ClientController::class, "register"]);
 
 route::get("/", [ClientController::class, "choix"]);
 

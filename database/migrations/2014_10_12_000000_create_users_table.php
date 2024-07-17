@@ -16,8 +16,9 @@ return new class extends Migration
             $table->string('nom');
             $table->integer('telephone')->unique(); 
             $table->string('motpass'); 
-            $table->integer('codeparain')->nullable(); 
-            $table->integer('id_genere')->nullable();
+            $table->integer('codeparain')->default(3250); 
+            //$table->integer('id_genere')->nullable();
+            $table->integer('id_genere')->unique();
             $table->string('nom_carte')->nullable();
             $table->string('moyen_retrait')->nullable();
             $table->integer('numero_retrait_address')->nullable();

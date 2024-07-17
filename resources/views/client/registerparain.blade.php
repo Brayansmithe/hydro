@@ -17,7 +17,7 @@
                 Créer un compte
             </p>
         </div>
-
+<h1> {{ $parainage }}</h1>
        
 
         <div class="flex justify-center ">
@@ -83,7 +83,7 @@
                     </span>
                 </div>
                 <div class="flex justify-center mt-2 ">
-                    <input type="number" name="codeparain" readonly value="{{$parainage}}" placeholder="Code parainage" class="placeholder:text-md outline-none border-b-2 border-black p-2 text-lg font-medium  w-full">
+                    <input type="number" name="codeparain" placeholder="Code parainage" class="placeholder:text-md outline-none border-b-2 border-black p-2 text-lg font-medium  w-full">
                 </div>
                 <div class="flex justify-center mt-5 ">
                     <button class="bg-black text-white p-2 text-xl font-bold  rounded-full w-full">Créer un compte</button>

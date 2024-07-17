@@ -14,8 +14,14 @@ class clientController extends Controller
         return view("client.choix");
     }
 
-    public function register(){
+    public function registern(){
         return view("client.register");
+    }
+
+    public function register($parainage){
+
+
+        return view("client.register")->with('parainage',$parainage);
     }
 
     public function end(){
@@ -23,7 +29,11 @@ class clientController extends Controller
     }
 
     public function compte(){
-        return view("client.compte");
+
+        $users = User::where('codeparain', Auth::user()->id_genere)->get();
+
+    
+        return view("client.compte")->with('users',$users);
     }
 
     //Controller Kevin
@@ -102,40 +112,74 @@ class clientController extends Controller
 
 ///////////////////create user\\\\\\\\\\\\\\\\\\\\\\
 
-    public function createUser(Request $request){
-        $request->validate([
-            'nom' => 'required|string|max:255',
-            'telephone' => 'required|integer|unique:users',
-            'motpass' => 'required|string|min:6',
-            'codeParain' => 'nullable|integer',
-            'motpassconfirme' => 'required|string|min:6',
+    // public function createUser1(Request $request){
+    //     $request->validate([
+    //         'nom' => 'required|string|max:255',
+    //         'telephone' => 'required|integer|unique:users',
+    //         'motpass' => 'required|string|min:6',
+    //         'codeParain' => 'nullable|integer',
+    //         'motpassconfirme' => 'required|string|min:6',
 
-        ]);
+    //     ]);
 
         
-        if ($request->motpass !== $request->motpassconfirme) {
-            return back()->with('erreur','les deux mots de passes doivent etre identique');
+    //     if ($request->motpass !== $request->motpassconfirme) {
+    //         return back()->with('erreur','les deux mots de passes doivent etre identique');
 
-        }else{
+    //     }else{
 
-                // Créer un nouvel utilisateur
-            $utilisateur = new User();
-            $utilisateur->nom = $request->input('nom');
-            $utilisateur->telephone = $request->input('telephone');
-          //  $utilisateur->motpass = $request->input('motpass');
-            $utilisateur->motpass = bcrypt($request->input("motpass"));
+    //             // Créer un nouvel utilisateur
+    //         $utilisateur = new User();
+    //         $utilisateur->nom = $request->input('nom');
+    //         $utilisateur->telephone = $request->input('telephone');
+    //         $utilisateur->motpass = bcrypt($request->input("motpass"));
 
-            $utilisateur->codeparain = $request->input('codeparain');
-            $utilisateur->save();
-            return back()->with('status','utilisateur cree avec success');
-        }
+    //         $utilisateur->codeparain = $request->input('codeparain');
+    //         $utilisateur->save();
+    //         return back()->with('status','utilisateur cree avec success');
+    //     }
 
         
 
     
+    // }
+
+
+    public function createUser(Request $request)
+    {
+        $request->validate([
+            'nom' => 'required|string|max:255',
+            'telephone' => 'required|integer|unique:users',
+            'motpass' => 'required|string|min:6',
+            'codeparain' => 'integer',
+            'motpassconfirme' => 'required|string|min:6',
+        ]);
+    
+        if ($request->motpass !== $request->motpassconfirme) {
+            return back()->with('erreur', 'Les deux mots de passe doivent être identiques');
+        } else {
+
+            // Générer un ID unique de 4 chiffres
+            do {
+                $idgenere = str_pad(mt_rand(0, 9999), 4, '0', STR_PAD_LEFT);
+            } while (User::where('id_genere', $idgenere)->exists());
+    
+            $utilisateur = new User();
+            $utilisateur->nom = $request->input('nom');
+            $utilisateur->telephone = $request->input('telephone');
+            $utilisateur->motpass = bcrypt($request->input("motpass"));
+            $utilisateur->codeparain = $request->input('codeparain',3250);
+            $utilisateur->id_genere = $idgenere;
+    
+            $utilisateur->save();
+    
+            return redirect('/signin')->with('status', 'Utilisateur créé avec succès');
+        }
     }
+    
 
 
+   
 
     public function connexiona(LoginRequest $request)
     {

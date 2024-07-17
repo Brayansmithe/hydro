@@ -62,15 +62,16 @@ class RetraitController extends Controller
         } else {
             // Créer une nouvelle instance de Retrait
             $retrait = new Retrait();
-            $retrait->montant_retrait = $soldeRetrait;
+            $retrait->montan_retrait = $soldeRetrait;
             $retrait->id_user_retrait = $user->id;
             $retrait->moyen_retrait = $user->moyen_retrait;
-    
+            $retrait->statut_retrait = 1;
+
             // Déterminer l'adresse de retrait
             if ($user->numero_retrait) {
-                $retrait->adresse_retrait = $user->numero_retrait;
+                $retrait->address_retrait = $user->numero_retrait;
             } else {
-                $retrait->adresse_retrait = $user->numero_retrait_address;
+                $retrait->address_retrait = $user->numero_retrait_address;
             }
     
             // Mettre à jour le solde de l'utilisateur
