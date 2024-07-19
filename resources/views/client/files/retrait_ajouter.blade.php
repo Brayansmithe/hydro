@@ -54,7 +54,7 @@
             </div>
 
             <div class="py-2 text-center">
-                <p>10</p>
+                <p>{{ $users->count() }}</p>
                 <p>équipe</p>
             </div>
 

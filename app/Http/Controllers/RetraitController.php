@@ -76,10 +76,17 @@ class RetraitController extends Controller
     
             // Mettre à jour le solde de l'utilisateur
             $user->solde_user -= $soldeRetrait;
-            $user->save();
+            if ($user->moyen_retrait) {
+                $user->save();
     
-            // Enregistrer le retrait
-            $retrait->save();
+                // Enregistrer le retrait
+                $retrait->save();
+            } else {
+                return redirect()->back()->with('error', 'veillez liee une carte bancaire avant de faire un retrait');
+
+            }
+            
+        
     
             return redirect()->back()->with('success', 'Votre retrait a été effectué avec succès et est en cours de traitement');
         }

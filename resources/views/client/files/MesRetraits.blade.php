@@ -38,33 +38,47 @@
     <div class="mx-1">
         <table class="text-white border  border-white ">
             <thead class="fw-bold text-lg">
-                <th class="py-3 px-4 border-b border-e border-white">#</th>
+                <th class="py-3 px-4 border-b border-e border-white">N°</th>
                 <th class="py-3 px-4 border-b border-e border-white">Moyen</th>
-                <th class="py-3 px-4 border-b border-e border-white">Somme ( $ ) </th>
+                <th class="py-3 px-4 border-b border-e border-white">Somme (FCFA) </th>
                 <th class="py-3 px-4 border-b border-e border-white">Status</th>
             </thead>
 
+            <input type="hidden" value="{{$conte=1}}">
+
             <tbody>
-                <tr class="fw-bold" >
-                    <td class="py-3 px-4 border-b border-e border-white">1</td>
-                    <td class="py-3 px-4 border-b border-e border-white">Mtn</td>
-                    <td class="py-3 px-4 border-b border-e border-white">10000</td>
-                    <td class="py-3 px-4 border-b border-e border-white text-warning">En cours</td>
-                </tr>
+                @foreach ($retraits as $retrait)
+                    
+                    <tr class="fw-bold" >
+                        <td class="py-3 px-4 border-b border-e border-white">{{$conte}}</td>
+                        <td class="py-3 px-4 border-b border-e border-white">@if ($retrait->montan_retrait)
+                            {{$retrait->moyen_retrait}}
+                        @else
+                        {{$retrait->address_retrait}}
 
-                <tr class="fw-bold">
-                    <td class="py-3 px-4 border-b border-e border-white">2</td>
-                    <td class="py-3 px-4 border-b border-e border-white">Orange</td>
-                    <td class="py-3 px-4 border-b border-e border-white">5000</td>
-                    <td class="py-3 px-4 border-b border-e border-white text-danger">Echec</td>
-                </tr>
+                        @endif
 
-                <tr class="fw-bold">
-                    <td class="py-3 px-4 border-b border-e border-white">3</td>
-                    <td class="py-3 px-4 border-b border-e border-white">USDT Trc20</td>
-                    <td class="py-3 px-4 border-b border-e border-white">15000</td>
-                    <td class="py-3 px-4 border-b border-e border-white text-success">Valider</td>
-                </tr>
+                    </td>
+                        <td class="py-3 px-4 border-b border-e border-white">{{$retrait->address_retrait}}</td>
+
+                        @if ($retrait->statut_retrait==1)
+
+                            <td class="py-3 px-4 border-b border-e border-white text-warning">En cours</td>
+
+                        @elseif($retrait->statut_retrait==0)
+
+                         <td class="py-3 px-4 border-b border-e border-white text-danger">Echec</td>
+
+                        @else
+                        <td class="py-3 px-4 border-b border-e border-white text-success">Valider</td>
+
+                        @endif
+                    </tr>
+
+                    <input type="hidden" value="{{$conte++}}">
+
+                @endforeach
+    
             </tbody>
         </table>
     </div>

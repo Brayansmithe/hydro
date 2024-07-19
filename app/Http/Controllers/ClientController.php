@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Recharge;
+use App\Models\Retrait;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Http\Requests\LoginRequest;
@@ -88,11 +90,15 @@ class clientController extends Controller
     }
 
     public function MesRecharges(){
-        return view('client.files.MesRecharges');
+        $recharges = Recharge::where('id_user', Auth::user()->id)->get();
+        return view('client.files.MesRecharges')->with('recharges',$recharges);
     }
 
     public function MesRetraits(){
-        return view('client.files.MesRetraits');
+
+        $retraits = Retrait::where('id_user_retrait', Auth::user()->id)->get();
+
+        return view('client.files.MesRetraits')->with('retraits',$retraits);;
     }
 
     public function video(){
@@ -105,8 +111,9 @@ class clientController extends Controller
     }
 
     public function retrait_ajouter(){
+        $users = User::where('codeparain', Auth::user()->id_genere)->get();
 
-        return view('client.files.retrait_ajouter');
+        return view('client.files.retrait_ajouter')->with('users',$users);
     }
 
 
