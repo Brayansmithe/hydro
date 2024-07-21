@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\RetraitController;
+use App\Http\Controllers\AcheterController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -46,7 +48,7 @@ Route::get('/barrage', [ClientController::class, 'barrage'])->middleware('auth')
 
 Route::get('/MesBarrages', [ClientController::class, 'MesBarrages'])->middleware('auth');
 
-Route::get('/ConfirmeAchat', [ClientController::class, 'ConfirmeAchat'])->middleware('auth');
+Route::get('/ConfirmeAchat/{id}', [ClientController::class, 'ConfirmeAchat'])->middleware('auth');
 
 Route::get('/retrait', [ClientController::class, 'retrait'])->middleware('auth');
 
@@ -77,6 +79,7 @@ Route::post('/recharger/choix/confirmUSDT', [ClientController::class, 'confirmUS
 Route::post('/retrait/moyen/{id}', [RetraitController::class, 'storeMoyenRetrait']);
 Route::put('/retrait/addRetreait/{id}', [RetraitController::class, 'RetraitStore']);
 Route::get('/deconnexion',[RetraitController::class,'deconnexion']);
+Route::post('/confirm/achat/{id}', [AcheterController::class, 'confirmAchat']);
 
 
 

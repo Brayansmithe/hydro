@@ -32,156 +32,43 @@ bi bi-bar-chart
     <div class="container text-light ">
 
         
-
-        <div class="row bg-stone-600 pt-3 pb-4 rounded-4 mb-3 items-center">
+    @foreach ($barrages as $barrage)
+         <div class="row bg-stone-600 pt-3 pb-4 rounded-4 mb-3 items-center">
             <div class="col-7 text-start mb-2">
-                <h1 class="text-center font-bold text-xl">Barrage 1</h1>
+                <h1 class="text-center font-bold text-xl">{{$barrage->nom}}</h1>
 
                 <div class="flex justify-between mb-2">
                     <p>Pourcentage/jour:  </p>
-                    <p class="text-end">4.5%</p>
+                    <p class="text-end">{{$barrage->Pourcentage}} %</p>
                     
                 </div>
 
                 <div class="flex justify-between mb-2 items-center">
                     <p class="">période validitée:</p>
-                    <p class="text-end">365Jours</p>
+                    <p class="text-end">{{$barrage->periode}} Jours</p>
                     
                 </div>
 
                 <div class="flex justify-center mb-2">
-                    <p class="font-bold text-2xl">[ 5$ ; 20$ ]</p>
+                    <p class="font-bold text-2xl">[ {{$barrage->somDebut}}$ ; {{$barrage->somFin}}$ ]</p>
                 </div>
                 
                 
             </div>
             <div class="col-5 text-end">
-                <img src="images/logo5.jpg" class="rounded-2 bar" alt="###">
+                <img src="{{asset('assets/'.$barrage->image)}}" class="rounded-2 bar" alt="###">
             </div>
-            <div class="text-center">
-                <input type="button" value="Acheter" class="w-2/4 h-12 bg-black rounded-full text-white">
-            </div>
+            <a href="{{url('ConfirmeAchat/'.$barrage->id)}}">
+                <div class="text-center">
+                  
+                       <button type="submit" class="w-2/4 h-12 bg-black rounded-full text-white">Acheter</button>
+                
+               </div>
+           </a>
         </div>
+    @endforeach
+        
 
-        <div class="row bg-stone-600 pt-3 pb-4 rounded-4 mb-3 items-center">
-            <div class="col-7 text-start mb-2">
-                <h1 class="text-center font-bold text-xl">Barrage 1</h1>
-
-                <div class="flex justify-between mb-2">
-                    <p>Pourcentage/jour:  </p>
-                    <p class="text-end">4.5%</p>
-                    
-                </div>
-
-                <div class="flex justify-between mb-2 items-center">
-                    <p class="">période validitée:</p>
-                    <p class="text-end">365Jours</p>
-                    
-                </div>
-
-                <div class="flex justify-center mb-2">
-                    <p class="font-bold text-2xl">[ 5$ ; 20$ ]</p>
-                </div>
-                
-                
-            </div>
-            <div class="col-5 text-end">
-                <img src="images/logo5.jpg" class="rounded-2 bar" alt="###">
-            </div>
-            <div class="text-center">
-                <input type="button" value="Acheter" class="w-2/4 h-12 bg-black rounded-full text-white">
-            </div>
-        </div>
-
-        <div class="row bg-stone-600 pt-3 pb-4 rounded-4 mb-3 items-center">
-            <div class="col-7 text-start mb-2">
-                <h1 class="text-center font-bold text-xl">Barrage 1</h1>
-
-                <div class="flex justify-between mb-2">
-                    <p>Pourcentage/jour:  </p>
-                    <p class="text-end">4.5%</p>
-                    
-                </div>
-
-                <div class="flex justify-between mb-2 items-center">
-                    <p class="">période validitée:</p>
-                    <p class="text-end">365Jours</p>
-                    
-                </div>
-
-                <div class="flex justify-center mb-2">
-                    <p class="font-bold text-2xl">[ 5$ ; 20$ ]</p>
-                </div>
-                
-                
-            </div>
-            <div class="col-5 text-end">
-                <img src="images/logo5.jpg" class="rounded-2 bar" alt="###">
-            </div>
-            <div class="text-center">
-                <input type="button" value="Acheter" class="w-2/4 h-12 bg-black rounded-full text-white">
-            </div>
-        </div>
-
-        <div class="row bg-stone-600 pt-3 pb-4 rounded-4 mb-3 items-center">
-            <div class="col-7 text-start mb-2">
-                <h1 class="text-center font-bold text-xl">Barrage 1</h1>
-
-                <div class="flex justify-between mb-2">
-                    <p>Pourcentage/jour:  </p>
-                    <p class="text-end">4.5%</p>
-                    
-                </div>
-
-                <div class="flex justify-between mb-2 items-center">
-                    <p class="">période validitée:</p>
-                    <p class="text-end">365Jours</p>
-                    
-                </div>
-
-                <div class="flex justify-center mb-2">
-                    <p class="font-bold text-2xl">[ 5$ ; 20$ ]</p>
-                </div>
-                
-                
-            </div>
-            <div class="col-5 text-end">
-                <img src="images/logo5.jpg" class="rounded-2 bar" alt="###">
-            </div>
-            <div class="text-center">
-                <input type="button" value="Acheter" class="w-2/4 h-12 bg-black rounded-full text-white">
-            </div>
-        </div>
-
-        <div class="row bg-stone-600 pt-3 pb-4 rounded-4 mb-3 items-center">
-            <div class="col-7 text-start mb-2">
-                <h1 class="text-center font-bold text-xl">Barrage 1</h1>
-
-                <div class="flex justify-between mb-2">
-                    <p>Pourcentage/jour:  </p>
-                    <p class="text-end">4.5%</p>
-                    
-                </div>
-
-                <div class="flex justify-between mb-2 items-center">
-                    <p class="">période validitée:</p>
-                    <p class="text-end">365Jours</p>
-                    
-                </div>
-
-                <div class="flex justify-center mb-2">
-                    <p class="font-bold text-2xl">[ 5$ ; 20$ ]</p>
-                </div>
-                
-                
-            </div>
-            <div class="col-5 text-end">
-                <img src="images/logo5.jpg" class="rounded-2 bar" alt="###">
-            </div>
-            <div class="text-center">
-                <input type="button" value="Acheter" class="w-2/4 h-12 bg-black rounded-full text-white">
-            </div>
-        </div>
 
 
 </div>

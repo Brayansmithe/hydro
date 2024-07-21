@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Recharge;
 use App\Models\Retrait;
+use App\Models\Barrage;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -69,15 +70,20 @@ class clientController extends Controller
     }
 
     public function barrage(){
-        return view('client.files.barrage');
+        $barrages=Barrage::get();
+        return view('client.files.barrage')->with('barrages',$barrages);
     }
 
     public function MesBarrages(){
         return view('client.files.MesBarrages');
     }
     
-    public function ConfirmeAchat(){
-        return view('client.files.ConfirmeAchat');
+    public function ConfirmeAchat($id){
+        $barrages=Barrage::find($id);
+        if(!$barrages){
+            return redirect("/barrage")->with('error', 'Barrage non trouvé.');
+        }
+        return view('client.files.ConfirmeAchat')->with('barrages',$barrages);;
     }
 
     public function retrait(){
@@ -290,6 +296,8 @@ class clientController extends Controller
 
         return redirect()->back()->with('success', 'Recharge confirmée avec succès.');
     }
+
+    ///////////recharge\\\\\\\\\\\\\\\\\\\\\
 
     public function confirmUSDT(Request $request)
     {
